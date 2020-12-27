@@ -1,0 +1,17 @@
+{
+  "name": "fanyi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev src/main.ts"
+  },
+  "dependencies": {
+    "commander": "^6.2.1",
+    "sha256": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.16",
+    "@types/sha256": "^0.2.0"
+  }
+}
