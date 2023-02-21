@@ -1,11 +1,17 @@
 {
-  "name": "fanyi",
+  "name": "dsxfanyi",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev src/main.ts"
   },
+  "bin": {
+    "fy": "dist/cli.js"
+  },
+  "files": [
+    "dist/**/*.js"
+  ],
   "dependencies": {
     "commander": "^6.2.1",
     "sha256": "^0.2.0"
