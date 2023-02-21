@@ -1,15 +1,15 @@
 import * as https from "https";
 import * as querystring from "querystring";
-import sha256 = require("sha256");
+const sha256 = require("sha256")
 import {appId,appKey} from './privite'
 
 type requestData = {
     errorCode:string,
     query:string,
-    translation:string[]
+    translation:string[],
+    basic: {explains:string[]},
 }
-export const translate = (word) => {
-    console.log(word);
+export const translate = (word:string) => {
 /*
         const pattern = new RegExp("[\u4E00-\u9FA5]+");
         if(pattern.test(word)){
@@ -41,19 +41,19 @@ export const translate = (word) => {
         }
     }
     const request = https.request(options, (response) => {
-        let chunks = []
+        let chunks:any[] = []
         response.on('data', (chunk) => {
             chunks.push(chunk)
         })
         response.on('end', () => {
            const string = Buffer.concat(chunks).toString()
             const object:requestData = JSON.parse(string)
-            console.log(object);
             if(object.errorCode !== '0'){
                 console.error('出错了')
                 process.exit(2)
             }else {
                 console.log(object.translation.join(','));
+                console.log(object.basic.explains.join(','));
                 process.exit(0)
             }
         })
